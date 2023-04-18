@@ -11,7 +11,6 @@ RUN wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh |
 
 RUN mkdir -p /.kutespaces/state \
  && chown vscode:vscode /.kutespaces/state
-COPY --from=vscode-extension /extension.vsix /.kutespaces/extension.vsix
 
 # some images require specific values
 ARG USERNAME=vscode
