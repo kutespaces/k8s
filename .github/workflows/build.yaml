@@ -26,3 +26,4 @@ jobs:
           imageName: ghcr.io/kutespaces/k8s
           cacheFrom: ghcr.io/kutespaces/k8s
           push: always
+          platform: linux/amd64,linux/arm64
