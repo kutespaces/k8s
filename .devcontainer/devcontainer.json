@@ -17,8 +17,7 @@
 		"ghcr.io/kutespaces/devcontainers-features/k3d:1": {
 			"version": "v5.4.9"
 		},
-		"ghcr.io/kutespaces/devcontainers-features/asdf-package:1": {
-			"plugin": "kubectl",
+		"ghcr.io/devcontainers-contrib/features/kubectl-asdf:2": {
 			"version": "1.25.9" // should match k3d's k8s minor version
 		},
 		"ghcr.io/kutespaces/devcontainers-features/kubectx-kubens:1": {},
@@ -26,7 +25,7 @@
 	},
 	"overrideCommand": true,
 	// some base images require a specific user name
-	"remoteUser": "vscode",
+	"containerUser": "vscode",
 	// Set container specific settings
 	"customizations": {
 		"vscode": {
