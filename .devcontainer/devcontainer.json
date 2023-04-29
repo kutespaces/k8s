@@ -8,7 +8,10 @@
 	],
 	"features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
-      "configureZshAsDefaultShell": true
+      "configureZshAsDefaultShell": true,
+			"username": "vscode",
+			"userUid": 1000,
+			"userGid": 1000
     },
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
 		"ghcr.io/kutespaces/devcontainers-features/k3d:1": {
