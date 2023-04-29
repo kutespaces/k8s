@@ -11,14 +11,15 @@
       "configureZshAsDefaultShell": true
     },
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/rio/features/k3d:1": {
+		"ghcr.io/kutespaces/devcontainers-features/k3d:1": {
 			"version": "v5.4.9"
 		},
-		"ghcr.io/devcontainers-contrib/features/kubectl-asdf:2": {
+		"ghcr.io/kutespaces/devcontainers-features/asdf-package:1": {
+			"plugin": "kubectl",
 			"version": "1.25.9" // should match k3d's k8s minor version
 		},
-		"ghcr.io/devcontainers-contrib/features/kubectx-kubens:1": {},
-		"ghcr.io/rio/features/k9s:1": {}
+		"ghcr.io/kutespaces/devcontainers-features/kubectx-kubens:1": {},
+		"ghcr.io/kutespaces/devcontainers-features/k9s:1": {}
 	},
 	"overrideCommand": true,
 	// some base images require a specific user name
