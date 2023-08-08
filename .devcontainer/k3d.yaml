@@ -1,4 +1,4 @@
-apiVersion: k3d.io/v1alpha2
+apiVersion: k3d.io/v1alpha4
 kind: Simple
 servers: 1
 network: k3d
@@ -7,24 +7,29 @@ kubeAPI:
   hostIP: "0.0.0.0"
   hostPort: "6443"
 
-volumes: []
-# - volume: /prometheus:/prometheus
-#   nodeFilters:
-#     - server[0]
+volumes:
+- volume: /workspaces:/workspaces
+  nodeFilters:
+  - server:*
 
 ports:
-- port: 8080:80 # same as `--port '8080:80@loadbalancer'`
+- port: 8000:80 # same as `--port '8000:80@loadbalancer'`
   nodeFilters:
   - loadbalancer
+
+registries:
+  use:
+    - k3d-registry.localhost:5500
 
 options:
   k3d:
     wait: true
-    timeout: "60s"
+    timeout: "90s"
   k3s:
-    extraServerArgs:
-    - --tls-san=127.0.0.1
-    extraAgentArgs: []
+    extraArgs:
+    - arg: --tls-san=127.0.0.1
+      nodeFilters:
+      - server:*
   kubeconfig:
     updateDefaultKubeconfig: true
     switchCurrentContext: true
